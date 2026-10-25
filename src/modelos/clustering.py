@@ -103,7 +103,12 @@ class Clustering:
 
         # 4. Cálculo das Frequências
         # Proporções observadas no Treino (proporções esperadas)
-        train_counts = pd.Series(labels_train).value_counts().sort_index()
+        train_counts = (
+            pd.Series(labels_train)
+            .value_counts()
+            .reindex(range(best_param["n_clusters"]), fill_value=0)
+            .sort_index()
+        )
         train_proportions = train_counts / len(self.df[[self.c1, self.c2]])
 
         # Frequências esperadas na Validação (Proporção do Treino * N_val)
@@ -119,7 +124,8 @@ class Clustering:
 
         # 5. Execução do Teste Qui-Quadrado de Aderência
         chi2_stat, p_value = chisquare(
-            f_obs=observed_val_counts, f_exp=expected_val_counts
+            f_obs=observed_val_counts.astype(float),
+            f_exp=expected_val_counts.astype(float),
         )
 
         # 6. Avaliação de Alinhamento Estrutural via Adjusted Rand Index (ARI)
