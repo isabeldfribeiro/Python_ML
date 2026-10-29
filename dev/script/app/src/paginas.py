@@ -127,7 +127,9 @@ class Paginas:
     # ------------------------------------------------------------------
     # Classificação
     # ------------------------------------------------------------------
-    def _resumo_classificacao(_self, df_test: pd.DataFrame, modelos: list) -> pd.DataFrame:
+    def _resumo_classificacao(
+        _self, df_test: pd.DataFrame, modelos: list
+    ) -> pd.DataFrame:
         """Calcula as métricas de cada classificador no conjunto de teste."""
         y_true = df_test["grupo"]
         linhas = []
@@ -197,7 +199,9 @@ class Paginas:
             linhas.append(
                 {
                     "Modelo": m,
-                    "RMSE": float(np.sqrt(mean_squared_error(df_test[y_true], df_test[m]))),
+                    "RMSE": float(
+                        np.sqrt(mean_squared_error(df_test[y_true], df_test[m]))
+                    ),
                     "MAE": mean_absolute_error(df_test[y_true], df_test[m]),
                     "R²": r2_score(df_test[y_true], df_test[m]),
                 }

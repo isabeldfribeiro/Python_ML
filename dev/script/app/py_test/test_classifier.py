@@ -27,9 +27,12 @@ def test_testar_hipotese_ramos(p_valor, esperado):
     obj = Classifier(_df())
 
     # When
-    with patch("src.modelos.classifier.st") as st_mock, patch(
-        "src.modelos.classifier.chi2_contingency",
-        return_value=(1.0, p_valor, 1, None),
+    with (
+        patch("src.modelos.classifier.st") as st_mock,
+        patch(
+            "src.modelos.classifier.chi2_contingency",
+            return_value=(1.0, p_valor, 1, None),
+        ),
     ):
         resultado = obj.testar_hipotese()
 

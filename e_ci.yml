@@ -3,6 +3,8 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - ruff=0.17.0
+  - mypy
   - python=3.10
   - pip
   - pytest

@@ -1,6 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image
 import streamlit as st
 
 from src.acesso_data import acesso_data_test, acesso_data_icon
@@ -27,7 +24,9 @@ def pagina_estrutura() -> str:
         str: Mensagem de sucesso.
     """
     st.set_page_config(
-        page_title="A. baumannii: Sepse × Ambiental", layout="wide", page_icon=acesso_data_icon()
+        page_title="A. baumannii: Sepse × Ambiental",
+        layout="wide",
+        page_icon=acesso_data_icon(),
     )
     st.markdown(
         """
@@ -43,7 +42,10 @@ def pagina_estrutura() -> str:
         unsafe_allow_html=True,
     )
 
-    title = "Modelos de Machine Learning para <i>Acinetobacter baumannii</i>: Sepse × Ambiental"
+    title = (
+        "Modelos de Machine Learning para <i>Acinetobacter baumannii</i>: "
+        "Sepse × Ambiental"
+    )
     st.markdown(
         f"<br><h3 style='text-align: center; '>{title}</h3>", unsafe_allow_html=True
     )

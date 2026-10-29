@@ -35,9 +35,10 @@ def test_testar_modelo_ramos(modelo, p_value, ari):
     df_test = _dados(seed=1)
 
     # When
-    with patch(
-        "src.modelos.clustering.chisquare", return_value=(1.0, p_value)
-    ), patch("src.modelos.clustering.adjusted_rand_score", return_value=ari):
+    with (
+        patch("src.modelos.clustering.chisquare", return_value=(1.0, p_value)),
+        patch("src.modelos.clustering.adjusted_rand_score", return_value=ari),
+    ):
         grafico, msg = getattr(obj, metodo)(params, df_test)
     plt.close("all")
 
