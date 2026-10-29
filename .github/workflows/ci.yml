@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  run-tests:
+    name: Test
+    runs-on: ubuntu-latest
+
+    env:
+      PYTHONPATH: ./dev/script/app
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up conda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: environment-ci.yml
+          activate-environment: pytest
+          auto-activate-base: false
+
+      - name: Run Pytest
+        shell: bash -el {0}
+        run: >
+          pytest ./dev/script/app/py_test
+          --cov=dev/script/app/src
+          --cov-report=term-missing
+          --cov-report=html:dev/script/app/htmlcov
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: htmlcov
+          path: dev/script/app/htmlcov
+
+      - name: Run Ruff
+        shell: bash -el {0}
+        run: ruff format --check ./dev/script/app
+
+      - name: Run Mypy
+        shell: bash -el {0}
+        run: mypy ./dev/script/app --ignore-missing-imports --follow-imports skip
+
+      - name: Run Flake
+        shell: bash -el {0}
+        run: flake8 --max-complexity 12 ./dev/script/app

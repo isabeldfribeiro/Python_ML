@@ -6,7 +6,7 @@ from src.acesso_data import acesso_data_test, acesso_data_banco
 
 def test_acesso_data_img():
     # Given
-    teste_local = "./app/data/img/DataLab_Logo_i.jpg"
+    teste_local = "./app/data/img/bioinfofos.jpg"
 
     # When
     teste_saida = acesso_data_test()

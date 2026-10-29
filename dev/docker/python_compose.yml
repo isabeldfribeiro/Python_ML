@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+    python-ml:
+        build: 
+            dockerfile: ./python.Dockerfile
+            context: .
+        container_name: python-ml
+        volumes:
+            - ./../script:/usr/src/myapp
+        networks:
+            - default
+        ports:
+            - 8888:8888
+            - 8080:8080
+
+volumes:
+    persistent:

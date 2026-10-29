@@ -14,7 +14,7 @@ def test_estrutura_pagina():
 
 def test_iniciando_sistema():
     # Given
-    teste_entrada = "Diga lá loco"
+    teste_entrada = "Olá"
 
     # When
     teste_saida = pagina_inicio(entrada=teste_entrada)
