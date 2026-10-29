@@ -19,7 +19,7 @@ jobs:
       - name: Set up conda
         uses: conda-incubator/setup-miniconda@v3
         with:
-          environment-file: environment-ci.yml
+          environment-file: e_ci.yml
           activate-environment: pytest
           auto-activate-base: false
 

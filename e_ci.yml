@@ -1,0 +1,12 @@
+name: testagem
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pytest
+  - pytest-cov
+  - flake8
+  - pip:
+      - -r dev/script/app/requirements.txt
