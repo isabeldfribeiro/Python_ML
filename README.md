@@ -36,8 +36,9 @@ Scripts utilizados nas análises e na aplicação das técnicas de *Machine Lear
 
 Etapa destinada à exploração e à compreensão das características dos dados antes e depois da estruturação.
 
-- **Pré-estruturação:** [Inserir link]
-- **Pós-estruturação:** [Inserir link]
+- [Pré-estruturação](https://github.com/isabeldfribeiro/Python_ML/blob/85beccb258ad455eb476fd3799d0ee57130c5eaa/dev/script/script_ml/data/first_report.html)
+
+- [Pós-estruturação](https://github.com/isabeldfribeiro/Python_ML/blob/85beccb258ad455eb476fd3799d0ee57130c5eaa/dev/script/script_ml/data/last_report.html)
 
 ### 3. Aplicação interativa
 
@@ -55,6 +56,6 @@ Relatório HTML com os resultados dos testes e informações sobre a cobertura d
 
 Conjunto de dados sintéticos utilizados nas análises do projeto.
 
-- **Base de dados:** [Inserir link]
+- [Base de dados](https://github.com/isabeldfribeiro/Python_ML/tree/85beccb258ad455eb476fd3799d0ee57130c5eaa/dev/script/script_ml/data)
 
 ---
