@@ -30,7 +30,7 @@ Avaliar a possibilidade de prever os valores de MIC para o imipenem a partir das
 
 Scripts utilizados nas análises e na aplicação das técnicas de *Machine Learning*.
 
-- [Acessar os scripts]([https://github.com/isabeldfribeiro/Python_ML/tree/0d437c7a60f452bc6e2e61a928bdddb3a205eef5/dev/script/script_ml](https://github.com/isabeldfribeiro/Python_ML/tree/7fc561b22cd2a9aaeea262aa28196592b4529e3b/dev/script/script_ml/scripts))
+- [Acessar os scripts](https://github.com/isabeldfribeiro/Python_ML/tree/7fc561b22cd2a9aaeea262aa28196592b4529e3b/dev/script/script_ml/scripts)
 
 ### 2. Análise exploratória de dados (EDA)
 
